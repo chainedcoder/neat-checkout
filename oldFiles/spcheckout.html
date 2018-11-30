@@ -1,0 +1,951 @@
+<html>
+<head>
+    <style>
+        @font-face {
+            font-family: WhitneyHTF-Black;
+            src: url(./fonts/WhitneyHTF-Black.otf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-BlackItalic;
+            src: url(./fonts/WhitneyHTF-BlackItalic.otf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-BlackItalicSc;
+            src: url(./fonts/WhitneyHTF-BlackItalicSC.otf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-BlackSC;
+            src: url(./fonts/WhitneyHTF-BlackSC.otf);
+        }
+
+        @font-face {
+            font-family: whitneyhtf-bolditalic-webfont;
+            src: url(./fonts/whitneyhtf-bolditalic-webfont.ttf);
+        }
+
+
+        @font-face {
+            font-family: WhitneyHTF-Bold;
+            src: url(./fonts/WhitneyHTF-Bold.ttf);
+        }
+
+
+        @font-face {
+            font-family: WhitneyHTF-Book;
+            src: url(./fonts/WhitneyHTF-Book.ttf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-Light;
+            src: url(./fonts/WhitneyHTF-Light.ttf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-Medium;
+            src: url(./fonts/WhitneyHTF-Medium.ttf);
+        }
+
+        @font-face {
+            font-family: WhitneyHTF-SemiBold;
+            src: url(./fonts/WhitneyHTF-SemiBold.ttf);
+        }
+
+        .ps_checkout {
+            background-color: rgba(0, 0, 0, 0.77) ;
+            height: 110vh ;
+            width: 100vw ;
+            display: none ;
+        }
+
+        .spcard {
+            position: relative ;
+            top: 0% ;
+            transform: translateY(50%) ;
+            margin-left: auto ;
+            margin-right: auto ;
+            background-color: #f2f2f4 ;
+            width: 25% ;
+            min-height: 450px ;
+            border-radius: 10px 10px 10px 10px ;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.10) ;
+            overflow: visible ;
+        }
+
+        .ps_form .spcard {
+            transform: translateY(35%) ;
+        }
+
+        .spcard-load {
+            min-height: 430px ;
+        }
+
+        .spcard-close {
+            position: absolute ;
+            display: block ;
+            right: -35px ;
+            top: 20px ;
+        }
+
+        .spclose {
+            position: relative ;
+            display: inline-block ;
+            width: 20px ;
+            height: 20px ;
+            overflow: hidden ;
+            height: 1px ;
+        }
+
+        .spcard-icon {
+            position: relative ;
+            top: 0% ;
+            transform: translateY(180%) ;
+            height: 60px ;
+            width: 120px ;
+            margin-left: auto ;
+            margin-right: auto ;
+        }
+
+        .sptitle {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 16px ;
+            color: #73767F ;
+            letter-spacing: 0 ;
+            margin: auto ;
+            border-top-left-radius: 10px ;
+            border-top-right-radius: 10px ;
+            padding: 30px ;
+        }
+
+        .splogo {
+            align-content: right ;
+            float: right ;
+        }
+
+        .spcard label {
+            font-family: WhitneyHTF-Bold ;
+            font-size: 10px ;
+            color: #818B92 ;
+            letter-spacing: 0.5px ;
+            text-align: left ;
+            display: block ;
+        }
+
+        ::placeholder {
+            color: rgba(40, 48, 54, 0.24) !important ;
+        }
+
+        .spcard input {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 14px ;
+            color: #283036 ;
+            letter-spacing: 0 ;
+            text-align: left ;
+            border-radius: 1px ;
+            height: 45px ;
+            width: 100% ;
+            padding: 10px ;
+            border: 1.5px solid #DEE2E5 ;
+            border-radius: 4px ;
+            margin-bottom: 25px ;
+            margin-top: 10px ;
+            text-transform: capitalize ;
+        }
+
+        .spcard input:focus {
+            border: 1.45px solid #0ABF53 ;
+            outline: none ;
+        }
+
+        .spcard input:valid {
+            border: 1.45px solid #0ABF53 ;
+        }
+
+        .spcard input:valid:last-of-type {
+            border: 1.45px solid #0ABF53 ;
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 14px ;
+            color: #0ABF53 ;
+            letter-spacing: 0 ;
+            text-align: left ;
+            caret-color: black ;
+        }
+
+        .spcard input:invalid {
+            border: 1.45px solid #FF3B30 ;
+        }
+
+        .spcard input:invalid:last-of-type {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 14px ;
+            color: #FF3B30 ;
+            letter-spacing: 0 ;
+            text-align: left ;
+            caret-color: black
+        }
+
+        .spcard input:valid:placeholder-shown {
+            border: 1.45px solid #DEE2E5 ;
+        }
+
+        .spcard input:required:placeholder-shown {
+            border: 1.45px solid #DEE2E5 ;
+        }
+
+        .spcard input:required:placeholder-shown:focus {
+            border: 1.45px solid #0ABF53 ;
+        }
+
+        .spcard-load-text {
+            font-family: WhitneyHTF-Medium ;
+            font-style: normal ;
+            font-stretch: normal ;
+            line-height: normal ;
+            letter-spacing: normal ;
+            color: #73767f ;
+            position: absolute ;
+            width: 100% ;
+            text-align: center ;
+            font-size: 17px ;
+            padding-right: -25px ;
+            height: 60% ;
+            top: 55% ;
+        }
+
+        .spcard-success-text {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 17px ;
+            color: #73767F ;
+            letter-spacing: 0 ;
+            text-align: center ;
+            position: absolute ;
+            width: 100% ;
+            font-size: 17px ;
+            padding-right: -5px ;
+            height: 50% ;
+            top: 40% ;
+        }
+
+        .spcard-success-text::before {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 22px ;
+            color: #0ABF53 ;
+            letter-spacing: 0 ;
+            text-align: center ;
+            content: "Payment Successful" ;
+        }
+
+        .spcard-sent-text {
+            font-family: WhitneyHTF-SemiBold ;
+            position: absolute ;
+            width: 100% ;
+            text-align: center ;
+            font-size: 17px ;
+            padding-right: -5px ;
+            height: 40% ;
+            top: 35% ;
+        }
+
+        .spcard-sent-text::before {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 22px ;
+            content: "Request Sent" ;
+            color: #F5A623 ;
+        }
+
+        .spcard-failed-text {
+            font-family: WhitneyHTF-SemiBold ;
+            position: absolute ;
+            width: 100% ;
+            text-align: center ;
+            font-size: 17px ;
+            padding-right: -5px ;
+            height: 40% ;
+            top: 35% ;
+        }
+
+        .spcard-failed-text::before {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 22px ;
+            content: "Payment Failed" ;
+            color: #FF3B30 ;
+        }
+
+        .spcard-icon-failed {
+            background-image: url(https://s3.amazonaws.com/spektra-checkout/images/Failed.svg) ;
+            background-repeat: no-repeat ;
+            height: 80px ;
+            width: 80px ;
+            margin-left: auto ;
+            margin-right: auto ;
+            margin-top: 5% ;
+        }
+
+        .spcard-icon-done {
+            background-image: url(https://s3.amazonaws.com/spektra-checkout/images/Success.svg) ;
+            background-repeat: no-repeat ;
+            height: 80px ;
+            width: 80px ;
+            margin-left: auto ;
+            margin-right: auto ;
+            margin-top: 5% ;
+        }
+
+        .spcard-icon-sent {
+            background-image: url(https://s3.amazonaws.com/spektra-checkout/images/Pending.svg) ;
+            background-repeat: no-repeat ;
+            height: 80px ;
+            width: 80px ;
+            margin-left: auto ;
+            margin-right: auto ;
+            margin-top: 5% ;
+        }
+
+        .sppay-button {
+            background-color: rgb(21, 21, 21) ;
+            color: white ;
+            width: 100px ;
+            height: 30px ;
+            border-radius: 4px ;
+            outline: 0 ;
+            border: none ;
+            transition: all .5s ease-in-out ;
+        }
+
+        .spcard-button {
+            background-image: linear-gradient(-180deg, #333333 0%, #000000 100%) ;
+            border: 4px solid #ECECEC ;
+            border-radius: 4px ;
+            position: absolute ;
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 18px ;
+            color: #FFFFFF ;
+            letter-spacing: 0.56px ;
+            text-align: center ;
+            width: 80% ;
+            padding: 15px ;
+            top: 77% ;
+            left: 10% ;
+            outline: none ;
+            cursor: pointer ;
+        }
+
+        .spcard-content {
+            padding-top: 20px ;
+            color: rgb(118, 121, 130) ;
+        }
+
+        .spcard-content a {
+            color: rgb(44, 131, 235) ;
+            display: inline-block ;
+        }
+
+        .spcard-body {
+            color: rgb(118, 121, 130) ;
+        }
+
+        .spcard-body a {
+            color: #0F76ED ;
+        }
+
+        .spcard-body-no {
+            color: rgb(4, 4, 4) ;
+            font-weight: 600 ;
+        }
+
+        .sperror {
+            display: inline-block ;
+            margin-top: -22px ;
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 12px ;
+            color: #FF3B30 ;
+            letter-spacing: 0 ;
+            text-align: left ;
+        }
+
+        .spbtn-pay {
+            background-image: linear-gradient(-180deg, #AA216E 0%, #5D1F5E 100%) ;
+            border: 3px solid #F2F2F2 ;
+            border-radius: 4px ;
+            font-family: WhitneyHTF-Bold ;
+            font-size: 18px ;
+            color: #FFFFFF ;
+            letter-spacing: 0.56px ;
+            text-align: center ;
+            width: 100% ;
+            padding: 15px ;
+            outline: none ;
+            cursor: pointer ;
+        }
+
+        .spbtn-pay:active {
+            -webkit-transform: scale(0.97) ;
+            transform: scale(0.97) ;
+        }
+
+        .spactive {
+            box-shadow: 0 0 40px #dee2e5 ;
+        }
+
+        .spbtn-text {
+            font-family: WhitneyHTF-SemiBold ;
+            font-size: 12px ;
+            color: #4A90E2 ;
+            letter-spacing: 0.38px ;
+            text-align: center ;
+            padding: 10px ;
+        }
+
+        .spbodysect {
+            background: #FFFFFF ;
+            border-radius: 0px 20px 10px 10px ;
+            box-shadow: 0 2px 2.5px 0 rgba(0, 0, 0, 0.12) ;
+            padding: 30px ;
+            height: 350px ;
+        }
+
+        .spdefault {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/sim.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .sp-provider-icon {
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spvodafoneghana {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/vodafoneghana.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spmtnghana {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/mtnghana.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .sptigoghana {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/airteltigoghana.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spairtelghana {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/airteltigoghana.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spsafaricomkenya {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/mpesa.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spairtelkenya {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/airtelkenya.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .sptelkom {
+            background: url(https://s3.amazonaws.com/spektra-checkout/images/telkom.png) no-repeat ;
+            background-size: 45px ;
+            background-position: 97% ;
+        }
+
+        .spcard form {
+            margin-top: 1px ;
+        }
+
+        @media only screen and (min-height: 400px) and (max-width: 489px) {
+            .spcard {
+                margin-bottom: auto ;
+                width: 70% ;
+            }
+        }
+
+        @media only screen and (max-width: 489px) {
+            .spcard {
+                width: 60% ;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .spcard {
+                width: 60% ;
+                height: 400px ;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            .spcard {
+                margin-top: -160px ;
+                width: 33% ;
+            }
+        }
+
+        @media only screen and (min-width: 1224px) {
+            .spcard {
+                margin-top: -100px ;
+                width: 25% ;
+            }
+        }
+
+        @media only screen and (min-width: 1440px) {
+            .spcard {
+                margin-top: -100px ;
+                width: 25% ;
+            }
+        }
+
+        @media only screen and (min-width: 1824px) {
+            .spcard {
+                margin-top: -100px ;
+                width: 13% ;
+            }
+        }
+
+        vg {
+            -webkit-transform: scale(3) ;
+            transform: scale(3) ;
+        }
+
+        @-webkit-keyframes fade {
+            0% {
+                opacity: 1 ;
+            }
+            100% {
+                opacity: .1 ;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1 ;
+            }
+            100% {
+                opacity: .1 ;
+            }
+        }
+
+        .c-spinner .c-spinner__bar-1 {
+            -webkit-animation: fade 1s linear infinite;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -1s ;
+            animation-delay: -1s ;
+        }
+
+        .c-spinner .c-spinner__bar-2 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.9166666667s ;
+            animation-delay: -0.9166666667s ;
+        }
+
+        .c-spinner .c-spinner__bar-3 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.8333333333s ;
+            animation-delay: -0.8333333333s ;
+        }
+
+        .c-spinner .c-spinner__bar-4 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.75s ;
+            animation-delay: -0.75s ;
+        }
+
+        .c-spinner .c-spinner__bar-5 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.6666666667s ;
+            animation-delay: -0.6666666667s ;
+        }
+
+        .c-spinner .c-spinner__bar-6 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.5833333333s ;
+            animation-delay: -0.5833333333s ;
+        }
+
+        .c-spinner .c-spinner__bar-7 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.5s ;
+            animation-delay: -0.5s ;
+        }
+
+        .c-spinner .c-spinner__bar-8 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.4166666667s ;
+            animation-delay: -0.4166666667s ;
+        }
+
+        .c-spinner .c-spinner__bar-9 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.3333333333s ;
+            animation-delay: -0.3333333333s ;
+        }
+
+        .c-spinner .c-spinner__bar-10 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.25s ;
+            animation-delay: -0.25s ;
+        }
+
+        .c-spinner .c-spinner__bar-11 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.1666666667s ;
+            animation-delay: -0.1666666667s ;
+        }
+
+        .c-spinner .c-spinner__bar-12 {
+            -webkit-animation: fade 1s linear infinite ;
+            animation: fade 1s linear infinite ;
+            -webkit-animation-delay: -0.0833333333s ;
+            animation-delay: -0.0833333333s ;
+        }
+
+    </style>
+    <script>
+        class SpektraCheckout extends HTMLElement {
+            constructor() {
+                super();
+                this._amount = null;
+                this._key = null;
+            }
+
+            static get observedAttributes() { return ["key", "amount"]; }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                // name will always be "country" due to observedAttributes
+                console.log("Attr ", name, oldValue, newValue);
+                this._amount = newValue;
+                this._updateRendering();
+            }
+            connectedCallback() {
+                console.log("Konect");
+                this._updateRendering();
+            }
+
+            get amount() {
+                console.log("get", this._amount);
+                return this._amount;
+            }
+            set amount(v) {
+                this.setAttribute("amount", v);
+                console.log("set ", v)
+            }
+
+            set key(v) {
+                this.setAttribute("key", v);
+                console.log("set ", v)
+            }
+
+            get key() {
+                console.log("get", this._key);
+                return this._key;
+            }
+
+            _updateRendering() {
+                // Left as an exercise for the reader. But, you'll probably want to
+                // check this.ownerDocument.defaultView to see if we've been
+                // inserted into a document with a browsing context, and avoid
+                // doing any work if not.
+            }
+        }
+
+        customElements.define("spektra-checkout", SpektraCheckout);
+
+        class SpkButton extends HTMLButtonElement {
+            constructor() {
+                super();
+
+                this.addEventListener("click", () => {
+                    console.log("Spektra Btn")
+                });
+            }
+        }
+        customElements.define("spk-button", SpkButton, { extends: "button" });
+
+        var icon_cache = {};
+        //detect delete to prevent formating number during delete or backspace
+        function psKeyUp(event) {
+            var key = event.keyCode || event.charCode;
+
+            var sp_phone = document.checkout.spphonenumber;
+
+            //return to defaul sim icon when user deletes operator prefix
+
+            if (sp_phone.value.length < 4) { //if the phone number begins with 0 then check if digits are less than 4
+                sp_phone.style.backgroundImage = "url(https://s3.amazonaws.com/spektra-checkout/images/sim.png)"
+            } else if (sp_phone.value[0] != "0" && sp_phone.value.length < 7) { //if the phone number doesnt begin with 0 then check if digits are less than 7(including spaces)
+                sp_phone.style.backgroundImage = "url(https://s3.amazonaws.com/spektra-checkout/images/sim.png)"
+            }
+
+            if (key == 8 || key == 46) { //detect delete or backspace key and prevent reformating input
+
+                return false;
+            } else {
+                spFormatNo();
+            }
+        }
+
+        //function to format phone number input to xxxx xxx xxx
+        function spFormatNo() {
+
+            phone_input = document.checkout.spphonenumber;
+            var temp_phone = phone_input.value;
+            var start = phone_input.selectionStart;
+            var end = phone_input.selectionEnd;
+
+
+            if (temp_phone[0] === '0') {
+                document.checkout.spphonenumber.setAttribute('maxlength', 12); //including space a local phone number must be upto 12 characters
+                temp_phone = temp_phone.replace(/^00\d*/, "");
+                phone_input.value = temp_phone.replace(/\W/gi, '').replace(/(\d{4})(\d{3})?(\d{3})?/, '$1 $2 $3');
+            } else {
+                document.checkout.spphonenumber.setAttribute('maxlength', 15);
+                phone_input.value = temp_phone.replace(/\W/gi, '').replace(/(\d{3})(\d{3})?(\d{3})?(\d{3})?/, '$1 $2 $3 $4'); //including spaces and country code, the phone number must be up to 15 characters
+            }
+
+
+
+            // if (phone_input.selectionEnd != temp_phone.length || phone_input.selectionStart != temp_phone.length) {
+            //     phone_input.selectionEnd = start
+            // }
+
+            var length_diff = phone_input.value.length - temp_phone.length;
+            phone_input.selectionStart = start + length_diff;
+            phone_input.selectionEnd = end + length_diff;
+
+
+            spValidatePhone();
+
+        }
+
+        // vslidate number if in xxxxx xxx xxx format
+        function spValidatePhone() {
+            phone_input = document.checkout.spphonenumber;
+            let sp_phone = document.checkout.spphonenumber.value.replace(/\s/g, '');
+
+            //validate for both local phone numbers (begins with 0) and internation (includes country code)
+            if (sp_phone.length >= 4 && phone_input.value[0] === "0") {
+
+                //detect operator and update logo
+                sp_op_pref = sp_phone.slice(0, 4)
+                if (sp_op_pref in icon_cache) {
+                    document.checkout.spphonenumber.style.backgroundImage = "url(" + icon_cache[sp_op_pref] + ")"
+                } else {
+                    psDetectOperator(sp_phone.slice(0, 4))
+                }
+
+            } else if (sp_phone.length >= 6 && phone_input.value[0] != "0") {
+                //detect operator and update logo
+                //detect operator and update logo
+                sp_op_pref = sp_phone.slice(0, 4)
+                if (sp_op_pref in icon_cache) {
+                    document.checkout.spphonenumber.style.backgroundImage = "url(" + icon_cache[sp_op_pref] + ")"
+                } else {
+                    psDetectOperator(sp_phone.slice(0, 6))
+                }
+            }
+
+            if ((phone_input.value.match(/^[0-9]{4}[\s]{1}[0-9]{3}[\s]{1}[0-9]{3}$/) || phone_input.value.match(/^[0-9]{3}[\s]{1}[0-9]{3}[\s]{1}[0-9]{3}[\s]{1}[0-9]{3}$/))) {
+                spClearError("spphone_er");
+                spValidInput(document.checkout.spphonenumber)
+
+
+            } else {
+                spDisplayError("spphone_er", "Oops! Incorrect Phone Number");
+                spInvalidInput(document.checkout.spphonenumber)
+
+                document.checkout.spphonenumber.className = "spdefault";
+            }
+
+        }
+
+
+        //validate the form for errors
+        function spValidator() {
+            spfirstnamefield = document.checkout.spfirstname;
+            splastnamefield = document.checkout.splastname;
+            var isvalid = true;
+
+            if (!spfirstnamefield.value) {
+                spInvalidInput(spfirstnamefield)
+                spDisplayError("spfirstname_er", "Please Enter Your First Name");
+                isvalid = false
+            } else {
+                spValidInput(spfirstnamefield)
+                spClearError("spfirstname_er");
+            }
+            if (!splastnamefield.value) {
+                spInvalidInput(splastnamefield)
+                spDisplayError("splastname_er", "Please Enter Your Last Name");
+                isvalid = false
+            } else {
+                spValidInput(splastnamefield)
+                spClearError("splastname_er");
+            }
+            return isvalid;
+        }
+
+        function spDisplayError(sp_id, sp_msg) {
+            document.getElementById(sp_id).innerHTML = sp_msg
+
+        }
+
+        function spClearError(sp_id) {
+            document.getElementById(sp_id).innerHTML = "";
+        }
+
+        //
+        function psDetectOperator(sp_phone) {
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.responseType = 'json';
+
+            // sp_phone.slice(0, 7)
+
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    let icon = xmlHttp.response.icon;
+                    icon_cache[sp_phone] = icon; //add icon to cache with the prefix as key
+
+                    document.checkout.spphonenumber.style.backgroundImage = "url(" + icon_cache[sp_phone] + ")"
+                    console.log(xmlHttp.response)
+                    console.log("Success")
+                } else if (xmlHttp.status === 404) {
+                    if (document.checkout.spphonenumber.value[0] === "0") {
+                        spDisplayError("spphone_er", "Please Include Your Country Code");
+                    } else {
+                        spDisplayError("spphone_er", "Unknown Operator");
+                    }
+                    document.checkout.spphonenumber.style.backgroundImage = "url(https://s3.amazonaws.com/spektra-checkout/images/sim.png)"
+                } else {
+                    // spDisplayError("spphone_er", xmlHttp.response.error);
+                    document.checkout.spphonenumber.style.backgroundImage = "url(https://s3.amazonaws.com/spektra-checkout/images/sim.png)"
+                }
+            };
+
+            var data = JSON.stringify({ "prefix": sp_phone });
+            xmlHttp.open("POST", "https://payments.spektra.co/core/core/validate-prefix/");
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+
+            xmlHttp.send(data);
+        }
+
+
+        //close card
+        function spCloseCard(el_id) {
+            document.getElementById(el_id).style.display = 'none';
+            document.getElementById("sppay-button").style.display = "initial";
+        }
+
+        //close card
+        function spClose(el_id) {
+            document.getElementById(el_id).style.display = 'none';
+        }
+
+        //override default  HTML5 form validation behaviour
+        document.addEventListener('invalid', (function() {
+            return function(e) {
+                e.preventDefault();
+                document.getElementById("name").focus();
+            };
+        })(), true);
+
+        function spcheckout(el_id) {
+            document.getElementById(el_id).style.display = "block"
+        }
+
+        function spInvalidInput(el) {
+            el.style.border = "1.45px solid #FF3B30"
+
+        }
+
+        function spValidInput(el) {
+            el.style.border = "1.45px solid #0ABF53"
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <br>
+    <button id="sppay-button" class="sppay-button" onclick="spcheckout('ps_checkout'); spClose('sppay-button');">Spektrapay</button>
+
+
+
+    <div id="ps_checkout" class="ps_checkout ps_form">
+
+        <div class="spcard">
+            <span class="spcard-close" onclick="spCloseCard('ps_checkout')">
+                        <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                        <title>close</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                                <g id="3" transform="translate(208.000000, 72.000000)">
+                                    <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                        <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            <div class="sptitle">
+                <span class="sptitle-h1">Payment Information</span>
+                <span class="splogo"><img src="https://s3.amazonaws.com/spektra-checkout/images/spektra.png" alt="Spektra." width="65" height="20"></span>
+            </div>
+            <div class="spbodysect">
+                <form name="checkout">
+                    <label for=" spfirstname">
+                            FIRST NAME
+                        </label>
+                    <input name="spfirstname" type="text" autocomplete="off " pattern="[a-zA-Z]{3,}" placeholder="Enter Your First Name ">
+                    <span id="spfirstname_er" class="sperror"></span>
+
+                    <label for="splastname">
+                                LAST NAME
+                            </label>
+                    <input name="splastname" type="text" autocomplete="off" pattern="[a-zA-Z]{3,}" placeholder="Enter Your Last Name ">
+                    <span id="splastname_er" class="sperror"></span>
+
+                    <label for="spphonenumber">
+                            MOBILE NUMBER
+                        </label>
+
+                    <input is="spk-input" name="spphonenumber" type="text" autocomplete="off " placeholder="Enter Your Mobile Number " class="sp-provider-icon spdefault " maxlength="15" minlength="12" onkeyup="psKeyUp(event)">
+                    <span id="spphone_er" class="sperror"></span>
+
+
+                    <button is="spk-button" type="button" onclick="spValidator()" id="sppay_amt " class="spbtn-pay ">Pay KES 3,500</button>
+
+                    <div id="sptr_fee " class="spbtn-text "> (KES 3,471 + 29 FEE)</div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

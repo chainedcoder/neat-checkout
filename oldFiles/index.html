@@ -1,0 +1,359 @@
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+    <script src="./js/index.js"></script>
+</head>
+
+
+<body>
+    <button data-amt="" id="sppay-button" class="sppay-button" onclick="spcheckout('ps_checkout'); spClose('sppay-button');">Spektrapay</button>
+    Run around the house at 4 in the morning Run in circles pounce on unsuspecting person Cat ipsum dolor sit
+    amet, shove bum in owner's face like camera lens so poop in the plant pot and climb a tree, wait for a fireman jump
+    to fireman then scratch his face or present belly, scratch hand when stroked. When in doubt, wash meowzer so pushes
+    butt to face meow
+    go back to
+
+
+    <!-- Checkout form section -->
+    <div id="spkCheckout" class="ps_checkout ps_form">
+
+        <div class="spk-card">
+            <span class="spk-card-close" onclick="spCloseCard('ps_checkout')">
+                <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                    <title>close</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                            <g id="3" transform="translate(208.000000, 72.000000)">
+                                <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                    <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <div class="spk-title">
+                <span class="spk-brand-name">Payment Information</span>
+                <span class="spk-logo"><img src="https://s3.amazonaws.com/spektra-checkout/images/spektra.png" alt="Spektra."
+                        width="65" height="20"></span>
+            </div>
+            <div class="spk-card-body">
+                <form id="spkcheckoutForm" name="spkCheckout" class="spkCheckout">
+                    <label for="spfirstname">
+                        FIRST NAME
+                    </label>
+                    <input id="spfirstname" onkeyup="validateName(this)" name="spfirstname" type="text" autocomplete="off"
+                        placeholder="Enter Your First Name ">
+                    <span id="spfirstname_er" class="spk-error"></span>
+
+                    <label for="splastname">
+                        LAST NAME
+                    </label>
+                    <input id="splastname" onkeyup="validateName(this)" name="splastname" type="text" autocomplete="off"
+                        placeholder="Enter Your Last Name ">
+                    <span id="splastname_er" class="spk-error"></span>
+
+                    <label for="spphonenumber">
+                        MOBILE NUMBER
+                    </label>
+
+                    <input id="spphonenumber" name="spphonenumber" type="text" autocomplete="off" placeholder="Enter Your Mobile Number "
+                        class="sp-provider-icon spdefault " maxlength="15" minlength="12" onkeyup="spkPhoneKeyUp(event)">
+                    <span id="spphonenumber_er" class="spk-error"></span>
+
+
+                    <button is="spk-button" type="button" onclick="spkPayWrapper(true, this)" id="spkPayBtn" class="spk-pay-btn"
+                        data-spkAmount="1" data-reference="Buy shoes" data-spkKey="pnoWKXcs0dJDesqK2IZj">Pay </button>
+
+                    <div id="spk_charges" class="spk-checkout-msg"> </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- end of checkout form -->
+
+
+
+
+    <!-- request sent section -->
+    <div id="spkSent" class="ps_checkout">
+
+        <div class="spk-card">
+            <span class="spk-card-close" onclick="spCloseCard('ps_sent')">
+                <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                    <title>close</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                            <g id="3" transform="translate(208.000000, 72.000000)">
+                                <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                    <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+
+            <div class="spk-card-content">
+                <div class="spk-card-icon-sent spk-request-sent"></div>
+
+                <span class="spk-card-content-text">
+                    <p>A Payment Request <br /> Has Been Sent To Your Number, <br /> Check Your Phone Now And <br />Enter
+                        Your <span style="color:#000000; font-family: WhitneyHTF-Bold; font-size: 19;">M-PESA PIN</span>
+                        <br /> To Confirm.</p>
+
+
+
+                </span>
+
+                <br>
+            </div>
+
+        </div>
+    </div>
+    <!-- end of request sent section -->
+
+
+
+
+
+    <!-- request loading section -->
+    <div id="spkLoading" class="ps_checkout">
+
+        <div class="spk-card ">
+            <span class="spk-card-close" onclick="spCloseCard('ps_loading')">
+                <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                    <title>close</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                            <g id="3" transform="translate(208.000000, 72.000000)">
+                                <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                    <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <div class="spk-card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 30 30" class="c-spinner js-spinner">
+                    <title></title>
+                    <g fill="none" fill-rule="evenodd">
+                        <path class="c-spinner__bar-1" d="M7.132 3.373c-.275-.477-.114-1.085.368-1.363.478-.277 1.093-.108 1.365.363l3.003 5.2c.275.478.114 1.087-.368 1.365-.478.276-1.093.107-1.365-.364l-3.003-5.2z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-2" d="M2.373 8.865c-.477-.276-.64-.883-.363-1.365.276-.478.892-.64 1.363-.368l5.2 3.003c.478.276.643.883.365 1.365-.276.478-.893.64-1.364.368l-5.2-3.003z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-3" d="M.997 16C.447 16 0 15.556 0 15c0-.552.453-1 .997-1h6.006c.55 0 .997.444.997 1 0 .552-.453 1-.997 1H.997z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-4" d="M3.373 22.868c-.477.275-1.085.114-1.363-.368-.277-.478-.108-1.093.363-1.365l5.2-3.003c.478-.275 1.087-.114 1.365.368.276.478.107 1.093-.364 1.365l-5.2 3.003z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-5" d="M8.865 27.627c-.276.477-.883.64-1.365.363-.478-.276-.64-.892-.368-1.363l3.003-5.2c.276-.478.883-.643 1.365-.365.478.276.64.893.368 1.364l-3.003 5.2z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-6" d="M16 29.003c0 .55-.444.997-1 .997-.552 0-1-.453-1-.997v-6.006c0-.55.444-.997 1-.997.552 0 1 .453 1 .997v6.006z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-7" d="M22.868 26.627c.275.477.114 1.085-.368 1.363-.478.277-1.093.108-1.365-.363l-3.003-5.2c-.275-.478-.114-1.087.368-1.365.478-.276 1.093-.107 1.365.364l3.003 5.2z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-8" d="M27.627 21.135c.477.276.64.883.363 1.365-.276.478-.892.64-1.363.368l-5.2-3.003c-.478-.276-.643-.883-.365-1.365.276-.478.893-.64 1.364-.368l5.2 3.003z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-9" d="M29.003 14c.55 0 .997.444.997 1 0 .552-.453 1-.997 1h-6.006c-.55 0-.997-.444-.997-1 0-.552.453-1 .997-1h6.006z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-10" d="M26.627 7.132c.477-.275 1.085-.114 1.363.368.277.478.108 1.093-.363 1.365l-5.2 3.003c-.478.275-1.087.114-1.365-.368-.276-.478-.107-1.093.364-1.365l5.2-3.003z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-11" d="M21.135 2.373c.276-.477.883-.64 1.365-.363.478.276.64.892.368 1.363l-3.003 5.2c-.276.478-.883.643-1.365.365-.478-.276-.64-.893-.368-1.364l3.003-5.2z"
+                            fill="#858585" />
+                        <path class="c-spinner__bar-12" d="M14 .997c0-.55.444-.997 1-.997.552 0 1 .453 1 .997v6.006c0 .55-.444.997-1 .997-.552 0-1-.453-1-.997V.997z"
+                            fill="#858585" />
+                    </g>
+                </svg>
+
+            </div>
+            <div class="spk-card-content">
+
+                <span class="spk-card-content-text spk-card-loading-text">We Are Processing Your Payment ...</span>
+
+            </div>
+
+        </div>
+        <!-- loading section end -->
+
+
+
+        <!-- request succesful section -->
+        <div id="ps_success" class="ps_checkout">
+
+            <div class="spk-card">
+                <span class="spk-card-close" onclick="spCloseCard('ps_success')">
+                    <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                        <title>close</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                                <g id="3" transform="translate(208.000000, 72.000000)">
+                                    <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                        <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+
+                <div class="spk-card-content">
+                    <div class="spk-card-icon-done spk-success-text"></div>
+
+                    <span class="spk-card-content-text ">
+                        <p>Your Payment Of <span style="color:#000000; font-family: WhitneyHTF-Bold; font-size: 19;">KES
+                                3,500 </span> <br /> Was Successful.
+
+                        </p>
+                    </span>
+
+                    <br>
+                    <button class="spk-card-button">All Done</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- end of request succesful section -->
+
+
+        <!-- request timeout section -->
+        <div id="spktimeout" class="ps_checkout">
+
+            <div class="spk-card">
+                <span class="spk-card-close" onclick="spCloseCard('ps_sent')">
+                            <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                            <title>close</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                                    <g id="3" transform="translate(208.000000, 72.000000)">
+                                        <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                            <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+
+                <div class="spk-card-content">
+                    <div class="spk-card-icon-failed spk-timeout-text"></div>
+                    <span class="spk-card-content-text"><p>Your Payment Request <br /> <span style="color:#000000; font-family: WhitneyHTF-Bold; font-size: 19;">TIMED OUT!</span></p>
+
+
+                    <a href="#">Please Try Again</a>
+                    </span>
+
+                    <br>
+                </div>
+
+            </div>
+            <script src="./js/index.js"></script>
+
+        </div>
+        <!-- Enf of request timeout section -->
+
+
+        <!-- Request failed section -->
+        <div id="spKsent" class="ps_checkout">
+
+            <div class="spk-card">
+                <span class="spk-card-close" onclick="spCloseCard('ps_sent')">
+                            <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                            <title>close</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                                    <g id="3" transform="translate(208.000000, 72.000000)">
+                                        <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                            <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+    
+                <div class="spk-card-content">
+                    <div class="spk-card-icon-failed spk-failed-text"></div>
+                    <span class="spk-card-content-text"><p>Your Payment Request <br /> <span style="color:#000000; font-family: WhitneyHTF-Bold; font-size: 19;">FAILED!</span></p>
+    
+    
+                    <a href="#">Please Try Again</a>
+                    </span>
+    
+                    <br>
+                    <button class="spk-card-button">Change Number</button>
+                </div>
+    
+            </div>
+    
+        </div>
+
+        <!-- End of request failed section -->
+
+        <!-- Insufficient balance section -->
+        <div id="spkInsuficientFunds" class="ps_checkout">
+
+            <div class="spk-card">
+                <span class="spk-card-close" onclick="spCloseCard('ps_sent')">
+                            <svg width="18px" height="18px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                            <title>close</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="2C" transform="translate(-574.000000, -90.000000)" fill="#73767F">
+                                    <g id="3" transform="translate(208.000000, 72.000000)">
+                                        <g id="Material/Icons-black/close" transform="translate(361.000000, 13.000000)">
+                                            <polygon id="Shape" points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+    
+                <div class="spk-card-content">
+                    <div class="spk-card-icon-failed spk-failed-text"></div>
+                    <span class="spk-card-content-text"><p>You Have Insufficient Funds <br /> <span style="color:#000000; font-family: WhitneyHTF-Bold; font-size: 19;">PLEASE TOP UP!</span></p>
+                    </span>
+    
+                    <br>
+                    <button class="spk-card-button" onclick="spkChangeNumber('spkInsuficientFunds')">Change Number</button>
+                </div>
+    
+            </div>
+    
+        </div>
+
+        <!-- End of request failed section -->
+
+
+</body>
+
+</html>

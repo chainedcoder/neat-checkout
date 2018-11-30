@@ -1,0 +1,719 @@
+@font-face {
+    font-family: WhitneyHTF-Black;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-Black.otf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-BlackItalic;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-BlackItalic.otf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-BlackItalicSc;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-BlackItalicSC.otf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-BlackSC;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-BlackSC.otf);
+}
+
+@font-face {
+    font-family: whitneyhtf-bolditalic-webfont;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/whitneyhtf-bolditalic-webfont.ttf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-Bold;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-Bold.ttf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-Book;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-Book.ttf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-Light;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-Light.ttf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-Medium;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-Medium.ttf);
+}
+
+@font-face {
+    font-family: WhitneyHTF-SemiBold;
+    src: url(https://s3.amazonaws.com/spektra-checkout/fonts/WhitneyHTF-SemiBold.ttf);
+}
+
+.ps_checkout {
+    background-color: rgba(0, 0, 0, 0.77);
+    height: 100%;
+    width: 100%;
+    /* display: none; */
+    top: 0px;
+    left: 0px;
+    position: fixed;
+}
+
+.spk-card {
+    position: relative;
+    transform: perspective(1px) translateY(-50%);
+    -ms-transform: perspective(1px) translateY(-50%);
+    -webkit-transform: perspective(1px) translateY(-50%);
+    /* -webkit-transform: perspective(1px)  translateY(40%); */
+    -moz-transform: perspective(1px) translateY(-50%);
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f4;
+    width: 320px;
+    height: 480px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.10);
+    overflow: visible;
+}
+
+/*.ps_form .spk-card {*/
+/*transform: translateY(35%) ;*/
+/*}*/
+/*.spcard-load {*/
+/*min-height: 430px ;*/
+/*}*/
+.spk-card-close {
+    position: absolute;
+    display: block;
+    right: -35px;
+    top: 20px;
+}
+
+/*.spclose {*/
+/*position: relative ;*/
+/*display: inline-block ;*/
+/*width: 20px ;*/
+/*height: 20px ;*/
+/*overflow: hidden ;*/
+/*height: 1px ;*/
+/*}*/
+.spk-card-icon {
+    position: relative;
+    /* top: 0%;
+    transform: translateY(180%); */
+    transform: perspective(1px) translateY(-50%);
+    -ms-transform: perspective(1px) translateY(-50%);
+    -webkit-transform: perspective(1px) translateY(-50%);
+    /* -webkit-transform: perspective(1px)  translateY(40%); */
+    -moz-transform: perspective(1px) translateY(-50%);
+    top: 30%;
+    height: 60px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spk-title {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 16px;
+    color: #73767F;
+    letter-spacing: 0;
+    margin: auto;
+    padding: 30px 23px;
+}
+
+.spk-logo {
+    float: right;
+    height: 19px;
+    width: 63px;
+}
+
+.spk-card label {
+    font-family: WhitneyHTF-Bold;
+    font-size: 10px;
+    color: #818B92;
+    letter-spacing: 0.5px;
+    text-align: left;
+    display: block;
+    background-color: #fff;
+}
+
+spk-card input::-ms-clear {
+    display: none;
+}
+
+.spk-card ::-webkit-input-placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+/* Firefox 4-18 */
+.spk-card :-moz-placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+/* Firefox 19-50 */
+.spk-card ::-moz-placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+/* - Internet Explorer 10–11
+   - Internet Explorer Mobile 10-11 */
+.spk-card :-ms-input-placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+/* Edge (also supports ::-webkit-input-placeholder) */
+.spk-card ::-ms-input-placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+/* CSS Pseudo-Elements Level 4 Editor's Draft */
+.spk-card ::placeholder {
+    color: rgba(40, 48, 54, 0.24) !important;
+}
+
+.spk-card input {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 14px;
+    color: #283036;
+    /*letter-spacing: 0 ;*/
+    text-align: left;
+    border-radius: 1px;
+    height: 45px;
+    width: 236px;
+    padding: 0 20px;
+    border: 1.4px solid #DEE2E5;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    text-transform: capitalize;
+    display: block;
+    background-color: #fff;
+}
+
+.spk-card input:focus {
+    border: 1.45px solid #0ABF53;
+    outline: none;
+}
+
+.spk-card input[valid=true] {
+    border: 1.45px solid #0ABF53;
+}
+
+.spk-card input[valid=true]:last-of-type {
+    border: 1.45px solid #0ABF53;
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 14px;
+    color: #0ABF53;
+    letter-spacing: 0;
+    text-align: left;
+    caret-color: black;
+}
+
+.spk-card input[valid=false] {
+    border: 1.45px solid #FF3B30;
+}
+
+.spk-card input[valid=false]:last-of-type {
+    border: 1.45px solid #FF3B30;
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 14px;
+    color: #FF3B30;
+    letter-spacing: 0;
+    text-align: left;
+    caret-color: black
+}
+
+.spk-card input[valid=true]:placeholder-shown {
+    border: 1.45px solid #DEE2E5;
+}
+
+.spk-card input:required:placeholder-shown {
+    border: 1.45px solid #DEE2E5;
+}
+
+.spk-card input:required:placeholder-shown:focus {
+    border: 1.45px solid #0ABF53;
+}
+
+.spk-card-content {
+    color: rgb(118, 121, 130);
+    font-family: WhitneyHTF-Medium;
+}
+
+.spk-card-content-text {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #73767f;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    /*padding-right: -25px ;*/
+    height: 320px;
+}
+
+.spk-card-loading-text {
+    top: 50%;
+}
+
+/*.spk-card-success-text::before {*/
+/*font-family: WhitneyHTF-SemiBold ;*/
+/*font-size: 22px ;*/
+/*color: #0ABF53 ;*/
+/*letter-spacing: 0 ;*/
+/*text-align: center ;*/
+/*content: "Payment Successful" ;*/
+/*}*/
+/*.spk-card-sent-text {*/
+/*font-family: WhitneyHTF-SemiBold ;*/
+/*position: absolute ;*/
+/*width: 100% ;*/
+/*text-align: center ;*/
+/*font-size: 17px ;*/
+/*padding-right: -5px ;*/
+/*height: 40% ;*/
+/*top: 35% ;*/
+/*}*/
+/* 
+.spk-card-sent-text::before {
+
+
+font-family: WhitneyHTF-SemiBold ;
+
+
+font-size: 22px ;
+
+
+content: "Request Sent" ;
+
+
+color: #F5A623 ;
+
+
+} */
+/*.spk-card-failed-text {*/
+/*font-family: WhitneyHTF-SemiBold ;*/
+/*position: absolute ;*/
+/*width: 100% ;*/
+/*text-align: center ;*/
+/*font-size: 17px ;*/
+/*padding-right: -5px ;*/
+/*height: 40% ;*/
+/*top: 35% ;*/
+/*}*/
+/*.spk-card-failed-text::before {*/
+/*font-family: WhitneyHTF-SemiBold ;*/
+/*font-size: 22px ;*/
+/*content: "Payment Failed" ;*/
+/*color: #FF3B30 ;*/
+/*}*/
+.spk-card-icon-failed {
+    background-image: url("https://s3.amazonaws.com/spektra-checkout/images/failed.svg");
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90px 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 180px;
+    text-align: center;
+}
+
+.spk-card-icon-done {
+    background-image: url("https://s3.amazonaws.com/spektra-checkout/images/Success.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90px 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 180px;
+    text-align: center;
+}
+
+.spk-card-icon-sent {
+    background-image: url("https://s3.amazonaws.com/spektra-checkout/images/Pending.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90px 90px;
+    /* height: 90px;
+    width: 90px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 180px;
+    /* padding-bottom: 20px; */
+    text-align: center;
+}
+
+.spk-request-sent::after {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 22px;
+    content: "Request Sent";
+    color: #F5A623;
+}
+
+.spk-success-text::after {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 22px;
+    color: #0ABF53;
+    letter-spacing: 0;
+    text-align: center;
+    content: "Payment Successful";
+}
+
+.spk-failed-text::after {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 22px;
+    color: #FF3B30;
+    letter-spacing: 0;
+    text-align: center;
+    content: "Request Failed";
+}
+
+.spk-timeout-text::after {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 22px;
+    color: #FF3B30;
+    letter-spacing: 0;
+    text-align: center;
+    content: "Request Timed Out";
+}
+
+/*.spk-card-sent-text {*/
+/*font-family: WhitneyHTF-SemiBold ;*/
+/*position: absolute ;*/
+/*width: 100% ;*/
+/*text-align: center ;*/
+/*font-size: 17px ;*/
+/*padding-right: -5px ;*/
+/*height: 40% ;*/
+/*top: 35% ;*/
+/*}*/
+/* /*  */
+sppay-button {
+    background-color: rgb(21, 21, 21);
+    color: white;
+    height: 30px;
+    border-radius: 4px;
+    outline: 0;
+    border: none;
+    transition: all .5s ease-in-out;
+}
+
+.spk-card-button {
+    background-image: linear-gradient(-180deg, #333333 0%, #000000 100%);
+    border: 4px solid #ECECEC;
+    border-radius: 4px;
+    position: absolute;
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 18px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+    text-align: center;
+    width: 80%;
+    padding: 15px;
+    top: 77%;
+    left: 10%;
+    outline: none;
+    cursor: pointer;
+}
+
+/* .spk-card-content {
+    color: rgb(118, 121, 130);
+    font-family: WhitneyHTF-Medium;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal; 
+    color: #73767f; 
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    /*padding-right: -25px ;
+    height: 60%;
+    top: 55%;
+} */
+/*.spk-card-content a {*/
+/*color: rgb(44, 131, 235) ;*/
+/*display: inline-block ;*/
+/*}*/
+/*.spk-card-body {*/
+/*color: rgb(118, 121, 130) ;*/
+/*}*/
+/*.spk-card-body a {*/
+/*color: #0F76ED ;*/
+/*}*/
+/*.spk-card-body-no {*/
+/*color: rgb(4, 4, 4) ;*/
+/*font-weight: 600 ;*/
+/*}*/
+.spk-error {
+    display: inline-table;
+    margin-top: -22px;
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 12px;
+    color: #FF3B30;
+    letter-spacing: 0;
+    text-align: left;
+    float: left;
+    width: 100%
+}
+
+.spk-er-wrapper {}
+
+.spk-pay-btn {
+    background-image: linear-gradient(-180deg, #AA216E 0%, #5D1F5E 100%);
+    border: 3px solid #F2F2F2;
+    border-radius: 4px;
+    font-family: WhitneyHTF-Bold;
+    font-size: 18px;
+    color: #FFFFFF;
+    letter-spacing: 0.56px;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.spk-pay-btn:active {
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+}
+
+/*.spactive {*/
+/*box-shadow: 0 0 40px #dee2e5 ;*/
+/*}*/
+.spk-checkout-msg {
+    font-family: WhitneyHTF-SemiBold;
+    font-size: 12px;
+    color: #4A90E2;
+    letter-spacing: 0.38px;
+    text-align: center;
+    padding: 10px;
+}
+
+.spk-card-body {
+    background: #FFFFFF;
+    border-radius: 0px 20px 10px 10px;
+    box-shadow: 0 2px 2.5px 0 rgba(0, 0, 0, 0.12);
+    height: 362px;
+    padding: 20px;
+}
+
+.spdefault {
+    background: url("https://s3.amazonaws.com/spektra-checkout/images/sim.png") no-repeat;
+    background-size: 45px;
+    background-position: 97%;
+}
+
+/*.sp-provider-icon {*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.spvodafoneghana {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/vodafoneghana.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.spmtnghana {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/mtnghana.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.sptigoghana {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/airteltigoghana.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.spairtelghana {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/airteltigoghana.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.spsafaricomkenya {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/mpesa.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.spairtelkenya {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/airtelkenya.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*.sptelkom {*/
+/*background: url(https://s3.amazonaws.com/spektra-checkout/images/telkom.png) no-repeat ;*/
+/*background-size: 45px ;*/
+/*background-position: 97% ;*/
+/*}*/
+/*@media only screen and (min-height: 400px) and (max-width: 489px) {*/
+/*.spk-card {*/
+/*margin-bottom: auto ;*/
+/*width: 70% ;*/
+/*}*/
+/*}*/
+/*@media only screen and (max-width: 489px) {*/
+/*.spk-card {*/
+/*width: 60% ;*/
+/*}*/
+/*}*/
+/*@media only screen and (max-width: 768px) {*/
+/*.spk-card {*/
+/*width: 60% ;*/
+/*height: 400px ;*/
+/*}*/
+/*}*/
+/*@media only screen and (min-width: 768px) and (max-width: 1024px) {*/
+/*.spk-card {*/
+/*margin-top: -160px ;*/
+/*width: 33% ;*/
+/*}*/
+/*}*/
+/*@media only screen and (min-width: 1224px) {*/
+/*.spk-card {*/
+/*margin-top: -100px ;*/
+/*width: 25% ;*/
+/*}*/
+/*}*/
+/*@media only screen and (min-width: 1440px) {*/
+/*.spk-card {*/
+/*margin-top: -100px ;*/
+/*width: 25% ;*/
+/*}*/
+/*}*/
+/*@media only screen and (min-width: 1824px) {*/
+/*.spk-card {*/
+/*margin-top: -100px ;*/
+/*width: 13% ;*/
+/*}*/
+/*}*/
+/*vg {*/
+/*-webkit-transform: scale(3) ;*/
+/*transform: scale(3) ;*/
+/*}*/
+/*@-webkit-keyframes fade {*/
+/*0% {*/
+/*opacity: 1 ;*/
+/*}*/
+/*100% {*/
+/*opacity: .1 ;*/
+/*}*/
+/*}*/
+/*@keyframes fade {*/
+/*0% {*/
+/*opacity: 1 ;*/
+/*}*/
+/*100% {*/
+/*opacity: .1 ;*/
+/*}*/
+/*}*/
+@-webkit-keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .1;
+    }
+}
+
+.c-spinner {
+    /* Bind the animation */
+}
+
+.c-spinner .c-spinner__bar-1 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+.c-spinner .c-spinner__bar-2 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.9166666667s;
+    animation-delay: -0.9166666667s;
+}
+
+.c-spinner .c-spinner__bar-3 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.8333333333s;
+    animation-delay: -0.8333333333s;
+}
+
+.c-spinner .c-spinner__bar-4 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.75s;
+    animation-delay: -0.75s;
+}
+
+.c-spinner .c-spinner__bar-5 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.6666666667s;
+    animation-delay: -0.6666666667s;
+}
+
+.c-spinner .c-spinner__bar-6 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.5833333333s;
+    animation-delay: -0.5833333333s;
+}
+
+.c-spinner .c-spinner__bar-7 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.c-spinner .c-spinner__bar-8 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.4166666667s;
+    animation-delay: -0.4166666667s;
+}
+
+.c-spinner .c-spinner__bar-9 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.3333333333s;
+    animation-delay: -0.3333333333s;
+}
+
+.c-spinner .c-spinner__bar-10 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s;
+}
+
+.c-spinner .c-spinner__bar-11 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.1666666667s;
+    animation-delay: -0.1666666667s;
+}
+
+.c-spinner .c-spinner__bar-12 {
+    -webkit-animation: fade 1s linear infinite;
+    animation: fade 1s linear infinite;
+    -webkit-animation-delay: -0.0833333333s;
+    animation-delay: -0.0833333333s;
+}
